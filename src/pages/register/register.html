@@ -1,0 +1,119 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>register</ion-title>
+    <button menuToggle   ion-button icon-only> <ion-icon name="menu"></ion-icon></button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form  novalidate>
+        <ion-list >
+
+            <ion-list radio-group>
+                <ion-list-header>
+                 soy mayor de 18 años
+                </ion-list-header>
+              
+                <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio  value="no"></ion-radio>
+                </ion-item>
+              
+                <ion-item>
+                  <ion-label>Si</ion-label>
+                  <ion-radio checked="true" value="si"></ion-radio>
+                </ion-item>
+              
+               
+              </ion-list>
+
+            <ion-item>
+                <ion-label>Sexo:</ion-label>
+                <ion-select >
+                  <ion-option value="f">Mujer</ion-option>
+                  <ion-option value="m">Hombre</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Dia de cumpleaños</ion-label>
+                  <ion-datetime displayFormat="DD/MM" ></ion-datetime>
+              </ion-item>
+            <ion-item>
+                <ion-label  floating>Nombre:</ion-label>
+                <ion-input type="text" ></ion-input>
+              </ion-item>
+
+         <ion-item>
+           <ion-label  floating>Email:</ion-label>
+           <ion-input type="mail" ></ion-input>
+         </ion-item>
+
+        
+           
+
+            <ion-item>
+             <ion-label  floating>Password:</ion-label>
+             <ion-input type="password" ></ion-input>
+           </ion-item>
+
+           <ion-item>
+
+              <ion-label  floating>  confimar Password:</ion-label>
+              <ion-input type="password" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Banda</ion-label>
+              <ion-select cancelText="cancelar" okText="Okay!" >
+                <ion-option value="1">Nirvana</ion-option>
+                <ion-option value="2">Los prisioneros</ion-option>
+                <ion-option value="3">Cafe tacuba</ion-option>
+                <ion-option value="4">Molotov</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>numeros  de cervezas que tomas </ion-label>
+              <ion-range min="0" max="10" color="secondary" pin="true" >
+                <ion-label range-left>0</ion-label>
+                <ion-label range-right>10</ion-label>
+              </ion-range>
+            </ion-item>
+
+           
+
+        </ion-list>
+
+        <ion-list>
+
+          <ion-list-header>En que occasion te gusta</ion-list-header>
+          <ion-item>
+            <ion-label>En fiestas</ion-label>
+            <ion-checkbox color="blue" ></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>En encuentros con amigos</ion-label>
+            <ion-checkbox color="blue" ></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>En las disco</ion-label>
+            <ion-checkbox color="blue" ></ion-checkbox>
+          </ion-item>
+
+          
+        </ion-list>
+
+        <div padding>
+          <button ion-button full type="button"  (click)="gotohome()">Registrate</button>
+        </div>
+        
+      </form>
+</ion-content>

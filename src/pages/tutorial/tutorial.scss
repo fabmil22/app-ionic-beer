@@ -1,0 +1,44 @@
+page-tutorial {
+
+    background-size: cover;
+    .botones{
+        position: absolute;
+        bottom: 50px;
+        z-index: 2;
+
+    }
+    ion-slide{
+       
+        padding:0px;
+        
+        p{
+            position: absolute;
+            bottom: 14%;
+            color:white;
+            left: 15%;
+            text-shadow: 2px 2px 4px rgb(2,2,2);
+            font-size: 1.2em;
+        }
+
+        &.slider1{
+            background-image: url('../assets/imgs/img1.jpg');
+           
+           
+            
+            
+           
+        }
+        &.slider2{
+            background-image: url('../assets/imgs/img2.jpg');
+          
+            
+           
+        }
+        &.slider3{
+            background-image: url('../assets/imgs/img3.jpg');
+            }
+       
+    } 
+
+
+}
