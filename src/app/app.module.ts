@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlbumDetaliPage } from '../pages/album-detali/album-detali';
 import { UsersProvider } from '../providers/users/users';
 import { UserListComponent } from '../components/user-list/user-list';
+import { PhotosProvider } from '../providers/photos/photos';
 @NgModule({
   declarations: [
     MyApp,
@@ -83,7 +84,8 @@ IonicModule.forRoot(MyApp)
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AlbunServiceProvider,
-    UsersProvider
+    UsersProvider,
+    PhotosProvider
   ]
 })
 export class AppModule {}

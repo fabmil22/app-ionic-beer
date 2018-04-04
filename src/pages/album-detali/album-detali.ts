@@ -1,25 +1,22 @@
+import { PhotosProvider } from './../../providers/photos/photos';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the AlbumDetaliPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
 @Component({
   selector: 'page-album-detali',
   templateUrl: 'album-detali.html',
 })
 export class AlbumDetaliPage {
+  albumAll: { "photo": string; }[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serve: PhotosProvider) {
+    this.albumAll = this.serve.getPhoto();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AlbumDetaliPage');
+
+    
   }
 
 }
