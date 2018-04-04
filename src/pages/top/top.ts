@@ -34,7 +34,7 @@ export class TopPage {
   }
 
   initializeItems() {
-    this.items = this.serve.getAll();
+    this.items = this.serve.getAllTops();
   }
 
 
@@ -56,5 +56,14 @@ export class TopPage {
     }
   }
 
+
+  /**votar(item)
+   * 
+   * function que se usa para la votacion
+   */
+  votar(item){
+    
+  }
+  
 
 }

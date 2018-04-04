@@ -1,3 +1,4 @@
+import { ListaUserPage } from './../pages/lista-user/lista-user';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -47,6 +48,9 @@ export class MyApp {
        {  titulo: "top",
        component: TopPage,
        icon:'start' },
+       {titulo: "Lista de amigos",
+       component: ListaUserPage,
+       icon:'person' }
 
   ]
   

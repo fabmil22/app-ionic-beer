@@ -1,68 +1,64 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+
 
 const ALBUMS = [
-  {
-    "userId": 1,
-    "id": 1,
-    "title": "quidem molestiae enim"
-  },
+  
   {
     "userId": 1,
     "id": 2,
-    "title": "sunt qui excepturi placeat culpa"
+    "title": "Es culpa de la cerveza",
+    "top":true,
+    "albumS":"assets/imgs/2_uha8qg.jpg",
+    "albumM":"assets/imgs/2_uha8qg (1).jpg",
+    "albumG":"assets/imgs/2_uha8qg (2).jpg",
   },
   {
     "userId": 1,
     "id": 3,
-    "title": "omnis laborum odio"
+    "title": "Al alamo con guinnes",
+    "top":false,
+    "albumS":"assets/imgs/2_uha8qg.jpg",
+    "albumM":"assets/imgs/2_uha8qg (1).jpg",
+    "albumG":"assets/imgs/2_uha8qg (2).jpg",
   },
   {
     "userId": 1,
     "id": 4,
-    "title": "non esse culpa molestiae omnis sed optio"
+    "title": "Mas pronto mejor",
+    "top":false,
+    "albumS":"assets/imgs/2_uha8qg.jpg",
+    "albumM":"assets/imgs/2_uha8qg (1).jpg",
+    "albumG":"assets/imgs/2_uha8qg (2).jpg",
   },
   {
     "userId": 1,
     "id": 5,
-    "title": "eaque aut omnis a"
+    "title": "salida de ostias",
+    "top":false,
+    "albumS":"assets/imgs/2_uha8qg.jpg",
+    "albumM":"assets/imgs/2_uha8qg (1).jpg",
+    "albumG":"assets/imgs/2_uha8qg (2).jpg",
   },
   {
     "userId": 1,
     "id": 6,
-    "title": "natus impedit quibusdam illo est"
+    "title": "Oh lala la vid",
+    "top":true,
+    "albumS":"assets/imgs/2_uha8qg.jpg",
+    "albumM":"assets/imgs/2_uha8qg (1).jpg",
+    "albumG":"assets/imgs/2_uha8qg (2).jpg",
   },
   {
     "userId": 1,
     "id": 1,
-    "title": "quidem molestiae enim"
+    "title": "centrados en el bar",
+    "top":true,
+    "albumS":"assets/imgs/2_uha8qg.jpg",
+    "albumM":"assets/imgs/2_uha8qg (1).jpg",
+    "albumG":"assets/imgs/2_uha8qg (2).jpg",
   },
-  {
-    "userId": 1,
-    "id": 2,
-    "title": "sunt qui excepturi placeat culpa"
-  },
-  {
-    "userId": 1,
-    "id": 3,
-    "title": "omnis laborum odio"
-  },
-  {
-    "userId": 1,
-    "id": 4,
-    "title": "non esse culpa molestiae omnis sed optio"
-  },
-  {
-    "userId": 1,
-    "id": 5,
-    "title": "eaque aut omnis a"
-  },
-  {
-    "userId": 1,
-    "id": 6,
-    "title": "natus impedit quibusdam illo est"
-  },
+  
 ];
 
 
@@ -80,5 +76,9 @@ export class AlbunServiceProvider {
      return ALBUMS;
   }
 
+/**retorme  albunes de fotos */
+getAllTops():any{
+  return ALBUMS.filter( res => res.top === true);
+}
 
 }

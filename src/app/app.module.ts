@@ -1,3 +1,4 @@
+import { ListaUserPage } from './../pages/lista-user/lista-user';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -23,6 +24,8 @@ import { GridPage } from './../pages/grid/grid';
 import { AlbunServiceProvider } from '../providers/albun-service/albun-service';
 import { HttpClientModule } from '@angular/common/http';
 import { AlbumDetaliPage } from '../pages/album-detali/album-detali';
+import { UsersProvider } from '../providers/users/users';
+import { UserListComponent } from '../components/user-list/user-list';
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +42,10 @@ import { AlbumDetaliPage } from '../pages/album-detali/album-detali';
     RegisterPage,
     LoginPage,
     GridPage,
-    AlbumDetaliPage
+    AlbumDetaliPage,
+    UserPage,
+    ListaUserPage,
+    UserListComponent
     
   ],
   imports: [
@@ -66,14 +72,18 @@ IonicModule.forRoot(MyApp)
     RegisterPage,
     LoginPage,
     GridPage,
-    AlbumDetaliPage
+    AlbumDetaliPage,
+    UserPage,
+    ListaUserPage
+    
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AlbunServiceProvider
+    AlbunServiceProvider,
+    UsersProvider
   ]
 })
 export class AppModule {}
