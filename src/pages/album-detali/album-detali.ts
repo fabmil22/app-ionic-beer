@@ -19,12 +19,13 @@ export class AlbumDetaliPage {
 
   ionViewDidLoad() {
 
-    
+
   }
 
   modalgalery(photo){
     console.log('ver modal' , photo);
     this.imagen = this.modal.create(PhotoPage, { photo : photo});
     this.imagen.present();
+    this.imagen.onDidDismiss( data => console.log(data))
   }
 }

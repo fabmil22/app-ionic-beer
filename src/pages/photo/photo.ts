@@ -16,13 +16,14 @@ export class PhotoPage {
   }
 
   ionViewDidLoad() {
-    
+
  this.photoselect= this.navParams.get('photo');
  console.log(this.photoselect);
   }
 
 
   close(){
-    this.viewphoto.dismiss()
+    let dato = 'medida completa';
+    this.viewphoto.dismiss({ dataInfo : dato })
   }
 }
