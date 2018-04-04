@@ -22,9 +22,9 @@ export class AlbumDetaliPage {
     
   }
 
-  modalgalery(pho){
-    console.log('ver modal' , pho);
-    this.imagen = this.modal.create(PhotoPage);
+  modalgalery(photo){
+    console.log('ver modal' , photo);
+    this.imagen = this.modal.create(PhotoPage, { photo : photo});
     this.imagen.present();
   }
 }

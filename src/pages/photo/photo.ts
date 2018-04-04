@@ -17,7 +17,8 @@ export class PhotoPage {
 
   ionViewDidLoad() {
     
- this.photoselect= this.navParams.get('image');
+ this.photoselect= this.navParams.get('photo');
+ console.log(this.photoselect);
   }
 
 
