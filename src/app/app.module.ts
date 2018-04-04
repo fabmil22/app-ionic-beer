@@ -27,6 +27,7 @@ import { AlbumDetaliPage } from '../pages/album-detali/album-detali';
 import { UsersProvider } from '../providers/users/users';
 import { UserListComponent } from '../components/user-list/user-list';
 import { PhotosProvider } from '../providers/photos/photos';
+import { PhotoPage } from '../pages/photo/photo';
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +47,8 @@ import { PhotosProvider } from '../providers/photos/photos';
     AlbumDetaliPage,
     UserPage,
     ListaUserPage,
-    UserListComponent
+    UserListComponent,
+    PhotoPage
     
   ],
   imports: [
@@ -75,7 +77,8 @@ IonicModule.forRoot(MyApp)
     GridPage,
     AlbumDetaliPage,
     UserPage,
-    ListaUserPage
+    ListaUserPage,
+    PhotoPage
     
 
   ],

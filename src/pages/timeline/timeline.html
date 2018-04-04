@@ -15,20 +15,20 @@
 
 
 <ion-content padding>
-    <ion-card  *ngFor="let item of albunes " (click)="goToAlbumDetailPage()" >
+    <ion-card  *ngFor="let item of albunes " (click)="goToAlbumDetailPage(item)" >
         <ion-item>
             <ion-avatar item-start>
               <img src="https://media-exp2.licdn.com/mpr/mpr/shrink_100_100/p/5/005/068/387/0f9e806.jpg">
             </ion-avatar>
-            <h2>Marty McFly</h2>
-            <p>November 5, 1955</p>
+            <h2>Fabian Miliani</h2>
+           
           </ion-item>
 
         <ion-card-header>
-          {{ item.title}}
+         <b>{{ item.title}}</b> 
         </ion-card-header>
         <ion-card-content>
-          <img src="assets/imgs/${{item.album}}" alt="">
+          <img src="{{item.albumS}}" alt="">
         </ion-card-content>
       </ion-card>
 </ion-content>

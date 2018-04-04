@@ -3,6 +3,7 @@
 
   <ion-navbar>
     <ion-title>Galery</ion-title>
+    <button menuToggle   ion-button icon-only> <ion-icon name="menu"></ion-icon></button>
   </ion-navbar>
 
 </ion-header>
@@ -11,8 +12,8 @@
 <ion-content padding>
  <ion-grid>
    <ion-row>
-     <ion-col col-4  *ngFor="let im of albumAll">
-      <img src="{{im.photo}}" alt="">
+     <ion-col col-4  *ngFor="let im of albumAll"  (click)="modalgalery(im.photo)" >
+      <img src="{{im.photo}}"   />
      </ion-col>
    </ion-row>
  </ion-grid>
