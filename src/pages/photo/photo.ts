@@ -23,6 +23,6 @@ export class PhotoPage {
 
 
   close(){
-    this.viewphoto.dismiss()
+    this.viewphoto.dismiss({ data :"la informacion"})
   }
 }

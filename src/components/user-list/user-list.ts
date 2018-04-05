@@ -1,5 +1,6 @@
 import { UsersProvider } from './../../providers/users/users';
 import { Component } from '@angular/core';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the UserListComponent component.
@@ -19,11 +20,11 @@ import { Component } from '@angular/core';
           </ion-avatar>
       </ion-item>
       <ion-item-options side="right" >
-          <button ion-button expandable (click)="Sendinvitation(friend)">
+          <button ion-button expandable (click)="ConfirmInvit(friend)">
             <ion-icon name="star"></ion-icon> Invitar
           </button>
-          <button ion-button expandable color="danger" (click)="Sendinvitation(friend)">
-          <ion-icon name="cancel"></ion-icon> cancelar
+          <button ion-button expandable color="danger" (click)="ConfirmCall()">
+          <ion-icon name="call"></ion-icon> call me
         </button>
     </ion-item-options>
   </ion-item-sliding>
@@ -40,7 +41,8 @@ export class UserListComponent {
   
   text: string;
 
-  constructor( private serv: UsersProvider) {
+  constructor( private serv: UsersProvider ,
+               private alertCntrl: AlertController) {
     this.users = this.serv.getUserFriends(3);
   }
   ionViewDidLoad() {
@@ -51,4 +53,54 @@ export class UserListComponent {
 
     console.log('ha sido invitado'+ JSON.stringify(item));
   }
+
+/**confirmar  si llama */
+
+ConfirmCall() {
+  let alert = this.alertCntrl.create({
+    title: 'you  wish call',
+    message: 'Do you want to call?',
+    buttons: [
+      {
+        text: 'no, Llamar',
+        role: 'cancel',
+        handler: () => {
+          console.log('no, llamar');
+        }
+      },
+      {
+        text: 'Si, llamar',
+        handler: () => {
+          console.log('hacer la llamar');
+        }
+      }
+    ]
+  });
+  alert.present();
+}
+
+/**confirmar la invitacion */
+
+ConfirmInvit(friend) {
+  let alert = this.alertCntrl.create({
+    title: 'you will invite your friend',
+    message: 'you will make the invitation',
+    buttons: [
+      {
+        text: 'No',
+        role: 'cancel',
+        handler: () => {
+          console.log('no');
+        }
+      },
+      {
+        text: 'Si',
+        handler: () => {
+          console.log('hacer la llamar');
+        }
+      }
+    ]
+  });
+  alert.present();
+}
 }
