@@ -5,12 +5,15 @@ page-tutorial {
         position: absolute;
         bottom: 250px;
         z-index: 2;
+       
 
     }
     ion-slide{
        
         padding:0px;
-        
+         button{
+            @include bordeimagen( $blanco)
+         }
         p{
             position: absolute;
             bottom: 14%;
