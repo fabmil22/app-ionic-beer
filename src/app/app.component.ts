@@ -20,7 +20,7 @@ import { TopPage } from './../pages/top/top';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = TutorialPage;
 
   pages=[
 

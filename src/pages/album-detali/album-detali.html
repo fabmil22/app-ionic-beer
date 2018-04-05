@@ -2,7 +2,11 @@
 <ion-header>
 
   <ion-navbar>
+<<<<<<< HEAD
     <ion-title>Gallery</ion-title>
+=======
+    <ion-title>GALERIA</ion-title>
+>>>>>>> 0e3a50e87ed6be583c124752ec6f9cef079a2235
     <button menuToggle   ion-button icon-only> <ion-icon name="menu"></ion-icon></button>
   </ion-navbar>
 
@@ -11,9 +15,10 @@
 
 <ion-content padding>
  <ion-grid>
+    <img  class="bordeimagen"src="assets/imgs/logop.png" alt="">
    <ion-row>
      <ion-col col-4  *ngFor="let im of albumAll"  (click)="modalgalery(im.photo)" >
-      <img src="{{im.photo}}"   />
+      <img   class="imagen" src="{{im.photo}}"   />
      </ion-col>
    </ion-row>
  </ion-grid>

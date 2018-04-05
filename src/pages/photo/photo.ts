@@ -23,7 +23,11 @@ export class PhotoPage {
 
 
   close(){
+<<<<<<< HEAD
     let dato = 'medida completa';
     this.viewphoto.dismiss({ dataInfo : dato })
+=======
+    this.viewphoto.dismiss({ data :"la informacion"})
+>>>>>>> 0e3a50e87ed6be583c124752ec6f9cef079a2235
   }
 }

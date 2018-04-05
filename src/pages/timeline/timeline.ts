@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AlbunServiceProvider } from '../../providers/albun-service/albun-service';
 import { AlbumDetaliPage } from '../album-detali/album-detali';
 
@@ -12,17 +12,28 @@ export class TimelinePage {
 
   public albunes:any[] = [];
  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private serve: AlbunServiceProvider) {
+  constructor(  public navCtrl: NavController, 
+                public navParams: NavParams, 
+                private serve: AlbunServiceProvider,
+                public  load: LoadingController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TimelinePage');
-   this.albunes = this.serve.getAll();
+    let load = this.load.create({
+      content: `cargando ...`,
+      spinner: 'dots'
+    });
+    load.present();
+      setTimeout( ()=>{
+        this.albunes = this.serve.getAll();
+        load.dismiss();
+      },  1);
+   
 
   }
 
   goToAlbumDetailPage(){
-
+    
     this.navCtrl.push(AlbumDetaliPage);
   }
 }

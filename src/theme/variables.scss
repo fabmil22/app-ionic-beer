@@ -40,11 +40,11 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
   amarelo:    #FDA403,
-  naranja:    #E8751A,
+  naranja:    #F6661F,
   marron:     #323232
 );
 
-
+$blanco: #ffffff;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -56,8 +56,8 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
-
+$button-md-round-border-radius: 5px;
+$button-round-border-radius:5px;
 
 // App Windows Variables
 // --------------------------------------------------
@@ -89,3 +89,8 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+$loading-md-spinner-color: red;
+$loading-md-max-width: 300px;
+$loading-md-max-height:150px;
+
+@import "mixin";
