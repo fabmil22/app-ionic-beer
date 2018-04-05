@@ -20,31 +20,31 @@
 
     
 <ion-col width-100>
-    <img src="http://www.dw.com/image/19184475_304.jpg" alt="">
+    <img src="http://www.pueblum.com/news/wp-content/uploads/2014/03/color-festival-3.jpg" alt="">
 </ion-col>
 </ion-row>
 
 <ion-row>
     <ion-col col-12>
-        <img src="assets/imgs/reyes.png" alt="">
+        
     </ion-col>
 
       <ion-col width-90>
         <p>El consumo moderado de cerveza nos ayuda a combatir enfermedades cardiovasculares, previene la osteoporosis y reduce las cataratas, entre otros muchos beneficios para la salud. También puede tener usos estéticos.
         </p>
 
-        <button ion-button block (click)="more()" > mas sobre la comunidad</button>
+        <button ion-button block  color="secondary"  (click)="more()" > mas sobre la comunidad</button>
       </ion-col>
       </ion-row>
       <ion-row>
       <ion-col col-6 col-sm-6 col-md-6 col-lg-4 col-xl-6>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX4mKq3mZysagk5qAwii00GKz3zoz_4DVZBSBB3JHUMtJSrFih" alt="">
+        <img src="http://bogotaelectronica.com/site/wp-content/uploads/2016/06/We-Are-One-Bogota%CC%81-6-de-Agosto.jpg" alt="">
       </ion-col>
       <ion-col col-6 col-sm-6 col-md-6 col-lg-4 col-xl-6>
-          <img src="http://cadernomercado.com.br/wp-content/uploads/2017/06/cerveja-artesanal-reproducao-1.jpg" alt="">
+          <img src="https://i0.wp.com/www.cuponerapp.com/guia/wp-content/uploads/2018/03/Holi-sexy-girl-natural-color-coupons-grid-640x360.jpg?fit=640%2C360&ssl=1" alt="">
         </ion-col>
         <ion-col col-6 col-sm-6 col-md-6 col-lg-4 col-xl-6>
-            <img src="https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2017/10/18/12/istock-520704188.jpg" alt="">
+            <img src="http://www.wappasonline.com/wp-content/uploads/2017/08/115631_festival-rock-en-espanol-1.jpg" alt="">
           </ion-col>
           <ion-col col-6 col-sm-6 col-md-6 col-lg-4 col-xl-6>
               <img src="https://www.drinkpreneur.com/wp-content/uploads/2017/04/drinkpreneur_2016-01-26-1453821995-8643361-beermain.jpg" alt="">
@@ -60,4 +60,14 @@
 
 </ion-row>
 </ion-grid>
+
+<ion-fab right bottom>
+  <button ion-fab color="naranja"><ion-icon name="arrow-dropleft"></ion-icon></button>
+  <ion-fab-list side="left">
+    <button ion-fab  color="naranja"  (click)="callredsocial('facebook')"><ion-icon name="logo-facebook"></ion-icon></button>
+    <button ion-fab  color="naranja"  (click)="callredsocial('twiter')"><ion-icon name="logo-twitter"></ion-icon></button>
+    <button ion-fab  color="naranja"  (click)="callredsocial('vimeo')"><ion-icon name="logo-vimeo"></ion-icon></button>
+    <button ion-fab  color="naranja"  (click)="callredsocial('google')"><ion-icon name="logo-googleplus"></ion-icon></button>
+  </ion-fab-list>
+</ion-fab>
 </ion-content>

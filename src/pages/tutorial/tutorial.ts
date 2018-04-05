@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import {  NavController, NavParams, MenuController } from 'ionic-angular';
 import { LoginPage } from './../login/login';
@@ -26,6 +27,10 @@ export class TutorialPage {
 
   openlinkREgister(){
     this.navCtrl.push(RegisterPage)
+  }
+
+  openlinkHOME(){
+    this.navCtrl.push(HomePage)
   }
 
 }

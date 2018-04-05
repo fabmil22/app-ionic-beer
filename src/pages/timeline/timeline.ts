@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {  NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AlbunServiceProvider } from '../../providers/albun-service/albun-service';
 import { AlbumDetaliPage } from '../album-detali/album-detali';
-import 'rxjs/add/operator/delay'
+
 
 @Component({
   selector: 'page-timeline',
@@ -20,17 +20,14 @@ export class TimelinePage {
 
   ionViewDidLoad() {
     let load = this.load.create({
-      content: `
-      <div class="custom-spinner-container">
-        <div class="custom-spinner-box"></div>
-      </div>`,
+      content: `cargando ...`,
       spinner: 'dots'
     });
     load.present();
       setTimeout( ()=>{
         this.albunes = this.serve.getAll();
         load.dismiss();
-      },  5000);
+      },  1);
    
 
   }

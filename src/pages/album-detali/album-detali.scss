@@ -1,3 +1,14 @@
 page-album-detali {
+  $blanco : #ffffff;
+    ion-content {
+        background-image: url('http://www.samacharnama.com/wp-content/uploads/2018/03/holi8.jpg');
+     }
+  
+    
+
+     .imagen{
+
+        @include bordeimagen( $blanco)
+     }
 
 }

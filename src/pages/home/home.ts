@@ -54,4 +54,9 @@ export class HomePage {
     actionSheet.present();
   }
 
+  callredsocial(red){
+
+    console.log('llamado de red  '+red)
+  }
+
 }
