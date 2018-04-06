@@ -1,3 +1,4 @@
+import { EventsPage } from './../pages/events/events';
 import { CalendarPage } from './../pages/calendar/calendar';
 import { ListaUserPage } from './../pages/lista-user/lista-user';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -31,6 +32,7 @@ import { PhotosProvider } from '../providers/photos/photos';
 import { PhotoPage } from '../pages/photo/photo';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { Camera } from '@ionic-native/camera';
+import { InvitationProvider } from '../providers/invitation/invitation';
 @NgModule({
   declarations: [
     MyApp,
@@ -52,7 +54,8 @@ import { Camera } from '@ionic-native/camera';
     ListaUserPage,
     UserListComponent,
     PhotoPage,
-    CalendarPage
+    CalendarPage,
+    EventsPage
     
   ],
   imports: [
@@ -84,7 +87,8 @@ IonicModule.forRoot(MyApp)
     UserPage,
     ListaUserPage,
     PhotoPage,
-    CalendarPage
+    CalendarPage,
+    EventsPage
     
 
   ],
@@ -95,7 +99,8 @@ IonicModule.forRoot(MyApp)
     AlbunServiceProvider,
     UsersProvider,
     PhotosProvider,
-    Camera
+    Camera,
+    InvitationProvider
   ]
 })
 export class AppModule {}

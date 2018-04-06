@@ -1,3 +1,4 @@
+import { EventsPage } from './../pages/events/events';
 import { CalendarPage } from './../pages/calendar/calendar';
 import { ListaUserPage } from './../pages/lista-user/lista-user';
 import { Component } from '@angular/core';
@@ -21,7 +22,7 @@ import { TopPage } from './../pages/top/top';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TutorialPage;
+  rootPage:any = EventsPage;
 
   pages=[
 
