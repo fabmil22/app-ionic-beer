@@ -1,10 +1,6 @@
 import { UsersProvider } from './../../providers/users/users';
 import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
-<<<<<<< HEAD
-
-=======
->>>>>>> 0e3a50e87ed6be583c124752ec6f9cef079a2235
 
 @Component({
   selector: 'user-list',
@@ -21,16 +17,8 @@ import { AlertController } from 'ionic-angular';
           <button ion-button expandable (click)="ConfirmInvit(friend)">
             <ion-icon name="star"></ion-icon> Invitar
           </button>
-<<<<<<< HEAD
-          <button ion-button expandable (click)="showConfirm()">
-          <ion-icon name="call"></ion-icon> Call
-        </button>
-          <button ion-button expandable color="danger" (click)="Sendinvitation(friend)">
-          <ion-icon name="cancel"></ion-icon> cancelar
-=======
           <button ion-button expandable color="danger" (click)="ConfirmCall()">
           <ion-icon name="call"></ion-icon> call me
->>>>>>> 0e3a50e87ed6be583c124752ec6f9cef079a2235
         </button>
     </ion-item-options>
   </ion-item-sliding>
@@ -47,12 +35,8 @@ export class UserListComponent {
 
   text: string;
 
-<<<<<<< HEAD
-  constructor( private serv: UsersProvider, public alert1: AlertController) {
-=======
   constructor( private serv: UsersProvider ,
                private alertCntrl: AlertController) {
->>>>>>> 0e3a50e87ed6be583c124752ec6f9cef079a2235
     this.users = this.serv.getUserFriends(3);
   }
   ionViewDidLoad() {
@@ -60,7 +44,7 @@ export class UserListComponent {
   }
 
   Sendinvitation(item){
-    let alert = this.alert1.create({
+    let alert = this.alertCntrl.create({
       title: 'Quieres invitar a tu amigo!',
       subTitle: 'INVITACION AL EVENTO GAMER',
       buttons: ['OK', 'CANCEL'],
@@ -70,29 +54,6 @@ export class UserListComponent {
     console.log('ha sido invitado'+ JSON.stringify(item));
   }
 
-<<<<<<< HEAD
-  showConfirm() {
-    let confirm = this.alert1.create({
-      title: 'DESEA LLAMAR A SU AMIGO',
-      message: 'Do you agree to use this lightsaber to do good across the intergalactic galaxy?',
-      buttons: [
-        {
-          text: 'NO LLAMAR',
-          handler: () => {
-            console.log('NO HACER LLAMADA');
-          }
-        },
-        {
-          text: 'SI LLAMAR',
-          handler: () => {
-            console.log('HACER LLAMADA');
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }
-=======
 /**confirmar  si llama */
 
 ConfirmCall() {
@@ -142,5 +103,4 @@ ConfirmInvit(friend) {
   });
   alert.present();
 }
->>>>>>> 0e3a50e87ed6be583c124752ec6f9cef079a2235
 }
