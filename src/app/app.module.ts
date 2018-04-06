@@ -1,3 +1,5 @@
+import { EventsPage } from './../pages/events/events';
+import { CalendarPage } from './../pages/calendar/calendar';
 import { ListaUserPage } from './../pages/lista-user/lista-user';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,6 +30,9 @@ import { UsersProvider } from '../providers/users/users';
 import { UserListComponent } from '../components/user-list/user-list';
 import { PhotosProvider } from '../providers/photos/photos';
 import { PhotoPage } from '../pages/photo/photo';
+import { NgCalendarModule  } from 'ionic2-calendar';
+import { Camera } from '@ionic-native/camera';
+import { InvitationProvider } from '../providers/invitation/invitation';
 @NgModule({
   declarations: [
     MyApp,
@@ -48,7 +53,9 @@ import { PhotoPage } from '../pages/photo/photo';
     UserPage,
     ListaUserPage,
     UserListComponent,
-    PhotoPage
+    PhotoPage,
+    CalendarPage,
+    EventsPage
     
   ],
   imports: [
@@ -57,6 +64,7 @@ import { PhotoPage } from '../pages/photo/photo';
 BrowserModule,
  FormsModule,
  HttpClientModule,
+ NgCalendarModule,
 IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -78,7 +86,9 @@ IonicModule.forRoot(MyApp)
     AlbumDetaliPage,
     UserPage,
     ListaUserPage,
-    PhotoPage
+    PhotoPage,
+    CalendarPage,
+    EventsPage
     
 
   ],
@@ -88,7 +98,9 @@ IonicModule.forRoot(MyApp)
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AlbunServiceProvider,
     UsersProvider,
-    PhotosProvider
+    PhotosProvider,
+    Camera,
+    InvitationProvider
   ]
 })
 export class AppModule {}

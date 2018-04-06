@@ -1,5 +1,6 @@
 page-login {
 
+<<<<<<< HEAD
   ion-content {
     @include linear-gradient(left,$blue-skies);
     -webkit-background-size: cover;
@@ -27,4 +28,12 @@ color: papayawhip;
     -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+=======
+    ion-content {
+        @include linear-gradient(left,$green-and-blue);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+      }
+>>>>>>> 3281755197cbc1a5bcaedb8402596734c9a00bbb
 }
