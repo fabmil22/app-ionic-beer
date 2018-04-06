@@ -30,6 +30,7 @@ import { UserListComponent } from '../components/user-list/user-list';
 import { PhotosProvider } from '../providers/photos/photos';
 import { PhotoPage } from '../pages/photo/photo';
 import { NgCalendarModule  } from 'ionic2-calendar';
+import { Camera } from '@ionic-native/camera';
 @NgModule({
   declarations: [
     MyApp,
@@ -93,7 +94,8 @@ IonicModule.forRoot(MyApp)
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AlbunServiceProvider,
     UsersProvider,
-    PhotosProvider
+    PhotosProvider,
+    Camera
   ]
 })
 export class AppModule {}
