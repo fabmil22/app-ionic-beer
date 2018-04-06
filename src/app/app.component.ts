@@ -1,3 +1,4 @@
+import { CalendarPage } from './../pages/calendar/calendar';
 import { ListaUserPage } from './../pages/lista-user/lista-user';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
@@ -35,7 +36,7 @@ export class MyApp {
        icon:'person' },
        {  titulo: "home",
        component:TabsPage,
-       icon:'home' },
+       icon:'home' }
   ]
   pagesadentro =[
 
@@ -50,7 +51,10 @@ export class MyApp {
        icon:'start' },
        {titulo: "Lista de amigos",
        component: ListaUserPage,
-       icon:'person' }
+       icon:'person' },
+       {titulo: "Calendar",
+       component:CalendarPage,
+       icon:'time' }
 
   ]
   
