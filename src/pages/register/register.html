@@ -15,10 +15,10 @@
 
 
 <ion-content padding>
-    <form  novalidate>
+    <form   [formGroup]="myForm" novalidate>
         <ion-list >
 
-            <ion-list radio-group>
+            <ion-list radio-group  formControlName="edad" >
                 <ion-list-header>
                  soy mayor de 18 años
                 </ion-list-header>
@@ -38,7 +38,7 @@
 
             <ion-item>
                 <ion-label>Sexo:</ion-label>
-                <ion-select >
+                <ion-select   formControlName="sexo">
                   <ion-option value="f">Mujer</ion-option>
                   <ion-option value="m">Hombre</ion-option>
                 </ion-select>

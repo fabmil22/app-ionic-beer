@@ -15,15 +15,15 @@
 
 
 <ion-content transparent>
- <form  novalidate >
+ <form  novalidate  (submit)="save($event)" >
    <ion-list  transparent>
     <ion-item >
       <ion-label  floating>Email:</ion-label>
-      <ion-input type="text" ></ion-input>
+      <ion-input type="text"  name="user" [(ngModel)]="data.user"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label  floating>Password:</ion-label>
-        <ion-input type="password" ></ion-input>
+        <ion-input type="password"  name="password" [(ngModel)]="data.password" ></ion-input>
       </ion-item>
    </ion-list>
    <div padding>

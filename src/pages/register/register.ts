@@ -17,7 +17,15 @@ import { TutorialPage } from './../tutorial/tutorial';
 })
 export class RegisterPage {
   gender:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  myForm :FormGroup;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public FormBuild : FormBuilder) {
+
+    this.myForm= FormBuild.group({
+
+      'field':[ '', [{}],[]],
+    })
   }
 
   ionViewDidLoad() {
