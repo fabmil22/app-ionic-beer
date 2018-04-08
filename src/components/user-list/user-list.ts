@@ -15,10 +15,10 @@ import { AlertController } from 'ionic-angular';
       </ion-item>
       <ion-item-options side="right" >
           <button ion-button expandable (click)="ConfirmInvit(friend)">
-            <ion-icon name="star"></ion-icon> Invitar
+            <ion-icon name="star" ></ion-icon> Invitar
           </button>
           <button ion-button expandable color="danger" (click)="ConfirmCall()">
-          <ion-icon name="call"></ion-icon> call me
+          <ion-icon name="call" ></ion-icon> call me
         </button>
     </ion-item-options>
   </ion-item-sliding>

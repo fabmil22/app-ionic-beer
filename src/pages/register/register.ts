@@ -23,9 +23,9 @@ export class RegisterPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder : FormBuilder) {
 
     this.myForm= formBuilder.group({
-      name: ['wewe', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required],
+      name: ['', [Validators.required , Validators.minLength(3) , Validators.pattern('[a-zA-Z]*')],[]],
+      lastName: ['', Validators.required , [] ],
+      email: ['', [Validators.required ,   Validators.pattern("^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")] ,[]],
       dateBirth: ['', Validators.required],
       passwordRetry: this.formBuilder.group({
         password: ['', Validators.required],
@@ -33,16 +33,16 @@ export class RegisterPage {
       }),
       gender: ['1', Validators.required],
     });
-      
-    
+
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  
-  
+
+
 
 
   gotohome(){
