@@ -15,6 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
+
+  data: any ={};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -22,4 +25,10 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+
+  save(event: Event){
+    event.preventDefault();
+  
+    console.log(this.data);
+  }
 }

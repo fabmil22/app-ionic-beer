@@ -65,7 +65,8 @@ BrowserModule,
  FormsModule,
  HttpClientModule,
  NgCalendarModule,
-IonicModule.forRoot(MyApp)
+IonicModule.forRoot(MyApp),
+FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
