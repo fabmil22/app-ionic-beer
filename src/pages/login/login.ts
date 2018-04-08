@@ -26,9 +26,9 @@ export class LoginPage {
   }
 
 
-  save(v: Event){
-     v.preventDefault();
-    console.log(v);
+  save(event: Event){
+    event.preventDefault();
+  
     console.log(this.data);
   }
 }
