@@ -10,7 +10,7 @@
       <ion-item  col-12>
         <ion-icon name="person" item-start></ion-icon>
         <ion-label stacked>Nombres:</ion-label>
-        <ion-input formControlName="name" type="text" placeholder="Nombre"></ion-input>
+        <ion-input formControlName="name" type="text" placeholder="Nombre" color="danger" ></ion-input>
       </ion-item>
       <ion-item *ngIf="myForm.get('name').errors && myForm.get('name').dirty" col-12>
         <p color="danger"    *ngIf="myForm.get('name').hasError('required') && myForm.get('name').dirty">  Se requiere este campo</p>
@@ -31,11 +31,25 @@
       <ion-item  *ngIf="myForm.get('email').hasError('pattern') && myForm.get('email').dirty" col-12>
         <p color="danger"> escrib un cuenta de correo valida</p>
         </ion-item>
+     
+     
       <ion-item>
-        <ion-icon name="calendar" item-start></ion-icon>
-        <ion-label stacked>Fecha de nacimiento:</ion-label>
-        <ion-datetime formControlName="dateBirth" displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime>
+          <ion-label stacked>selecciona la edad:</ion-label>
+        <ion-range #edad debounce="1" name="edad" min="15" max="90"  formControlName="age"    >
+          <ion-label range-left>10</ion-label>
+          <ion-label range-right>100</ion-label>
+        </ion-range>
       </ion-item>
+      <ion-item>
+          <ion-icon name="body" item-start></ion-icon>
+          <ion-label >edad</ion-label>
+          <ion-input type="text"  value="{{edad.value}}" [disabled]="true" ></ion-input>
+        </ion-item>
+        
+        <ion-item  *ngIf="myForm.get('age').hasError('invalid') " col-12>
+            <p color="danger"> debe ser mator  de edad</p>
+            </ion-item>
+
       <div formGroupName="passwordRetry">
         <ion-item>
           <ion-icon name="eye" item-start></ion-icon>
@@ -48,6 +62,9 @@
           <ion-input formControlName="passwordConfirmation" type="password" placeholder="Confirmar contraseña"></ion-input>
         </ion-item>
       </div>
+      <ion-item  *ngIf="myForm.get('passwordRetry').errors && myForm.get('passwordRetry.passwordConfirmation').dirty " col-12>
+          <p color="danger"> los passwords son distintos</p>
+          </ion-item>
 
       <ion-list radio-group formControlName="gender">
         <ion-item>

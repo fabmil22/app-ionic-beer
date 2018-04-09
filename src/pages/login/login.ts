@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
 
+ myLogin : FormGroup;
+ data: any ={};
 
-  data: any ={};
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public formBulder: FormBuilder) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+                this.myLogin = this.formBulder.group({
+
+                    user : ['',[Validators.required ,   Validators.pattern("^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")] ,[]],
+                    password : ['', Validators.pattern("[a-zA-Z0-9]+"),[]]
+
+                })
   }
 
   ionViewDidLoad() {

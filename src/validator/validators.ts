@@ -1,15 +1,19 @@
 
-import { Control } from '@angular/common';
+import {  AbstractControl } from '@angular/forms';
+
 export class MyValidations{
 
-static older(){
- let diferencia = 18;
+static older( control: AbstractControl){
+ let value = control.value;
+ 
+ if( value >= 18){
+    return null;
+} else{
+    return {'older' : true}
+} 
 
- if( diferencia >= 18)
-   return {
-
-    older : true,
-   }
 }
+
+
 
 }

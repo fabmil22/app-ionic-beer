@@ -10,16 +10,22 @@
 
 
 <ion-content transparent>
- <form  novalidate  (submit)="save($event)" >
+ <form  [formGroup]="myLogin" (submit)="save($event)" >
    <ion-list  transparent>
     <ion-item >
       <ion-label  floating>Email:</ion-label>
-      <ion-input type="text"  name="user" [(ngModel)]="data.user"></ion-input>
+      <ion-input type="text"  formControlName="user"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="myLogin.get('user').hasError('pattern') && myLogin.get('user').dirty"  color="danger" col-12>
+      <p> Debe de entar con una cuenta de correo</p>
     </ion-item>
     <ion-item>
         <ion-label  floating>Password:</ion-label>
-        <ion-input type="password"  name="password" [(ngModel)]="data.password" ></ion-input>
+        <ion-input type="password"  formControlName="password" ></ion-input>
       </ion-item>
+      <ion-item *ngIf="myLogin.get('password').hasError('pattern') && myLogin.get('password').dirty"  color="danger" col-12>
+          <p> No se premite caracteres especiales</p>
+        </ion-item>
    </ion-list>
    <div padding>
      <button ion-button full > Login</button>
