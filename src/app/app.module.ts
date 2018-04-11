@@ -34,6 +34,7 @@ import { NgCalendarModule  } from 'ionic2-calendar';
 import { Camera } from '@ionic-native/camera';
 import { InvitationProvider } from '../providers/invitation/invitation';
 import { IonicStorageModule } from '@ionic/storage';
+import { ServiceProvider } from '../providers/service/service';
 @NgModule({
   declarations: [
     MyApp,
@@ -104,7 +105,8 @@ IonicStorageModule.forRoot()
     PhotosProvider,
     Camera,
     InvitationProvider,
-    Storage
+    Storage,
+    ServiceProvider
   ]
 })
 export class AppModule {}
