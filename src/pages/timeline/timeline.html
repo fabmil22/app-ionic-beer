@@ -15,21 +15,32 @@
 
 
 <ion-content padding>
-    <ion-card  *ngFor="let item of albunes " (click)="goToAlbumDetailPage(item)" >
-        <ion-item>
-            <ion-avatar item-start>
-              <img src="https://media-exp2.licdn.com/mpr/mpr/shrink_100_100/p/5/005/068/387/0f9e806.jpg">
-            </ion-avatar>
-            <h2>Fabian Miliani</h2>
-
-          </ion-item>
-
-        <ion-card-header>
-         <b>{{ item.title}}</b>
-        </ion-card-header>
-        <ion-card-content>
-
-          <img src="{{item.albumS}}" alt="">
-        </ion-card-content>
-      </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-10>
+        <button ion-button block  (click)="showPrompt()" ><ion-icon name="add" padding></ion-icon>
+          <span>Agregar</span></button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list   [virtualScroll]="albunes" >
+      <ion-card  *virtualItem="let item" (click)="goToAlbumDetailPage(item)" >
+          <ion-item  >
+              <ion-avatar item-start>
+                <img src="https://media-exp2.licdn.com/mpr/mpr/shrink_100_100/p/5/005/068/387/0f9e806.jpg">
+              </ion-avatar>
+              <h2>Fabian Miliani</h2>
+  
+            </ion-item>
+  
+          <ion-card-header>
+           <b>{{ item.title}}</b>
+          </ion-card-header>
+          <ion-card-content>
+  
+            <img src="http://via.placeholder.com/350x150" alt="">
+          </ion-card-content>
+        </ion-card>
+  </ion-list>
+   
 </ion-content>

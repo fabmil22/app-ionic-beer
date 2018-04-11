@@ -1,23 +1,24 @@
 import { UsersProvider } from './../../providers/users/users';
 import { Component } from '@angular/core';
-import { AlertController } from 'ionic-angular';
+import { AlertController, LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'user-list',
   template: `<h2>Mis Amigos</h2>
- <ion-list  *ngFor="let user of users">
-  <ion-item-sliding   *ngFor="let friend of user.friend">
+  
+ <ion-list >
+  <ion-item-sliding   *ngFor="let friend of users">
       <ion-item >
-      {{friend.name}} {{friend.surname}}
+      {{friend.name.first}} {{friend.name.last}}
           <ion-avatar item-left>
-          <img src="{{friend.avatar}}">
+          <img src="{{friend.picture.medium}}">
           </ion-avatar>
       </ion-item>
       <ion-item-options side="right" >
           <button ion-button expandable (click)="ConfirmInvit(friend)">
             <ion-icon name="star" ></ion-icon> Invitar
           </button>
-          <button ion-button expandable color="danger" (click)="ConfirmCall()">
+          <button ion-button expandable color="danger" (click)="ConfirmCall(friend.cell)">
           <ion-icon name="call" ></ion-icon> call me
         </button>
     </ion-item-options>
@@ -31,15 +32,30 @@ import { AlertController } from 'ionic-angular';
   `
 })
 export class UserListComponent {
-  users: { "name": string; "surname": string; "email": string; "telefono": string; "direccion": string; "activo": string; }[];
+  users:any;
 
   text: string;
 
   constructor( private serv: UsersProvider ,
-               private alertCntrl: AlertController) {
-    this.users = this.serv.getUserFriends(3);
+               private alertCntrl: AlertController,
+               public loadctrls : LoadingController) {
+                let  load = this.loadctrls.create();
+                load.present();
+             this.serv.getUserall().subscribe(
+               res =>{ this.users= res.results;
+                 load.dismiss();
+               
+               
+              },
+               error => {console.log(error);
+                           load.dismiss();}
+          
+              );
   }
+
+
   ionViewDidLoad() {
+  
 
   }
 
@@ -56,7 +72,7 @@ export class UserListComponent {
 
 /**confirmar  si llama */
 
-ConfirmCall() {
+ConfirmCall(cell) {
   let alert = this.alertCntrl.create({
     title: 'you  wish call',
     message: 'Do you want to call?',
@@ -69,7 +85,7 @@ ConfirmCall() {
         }
       },
       {
-        text: 'Si, llamar',
+        text: 'Si, llamar al' + cell,
         handler: () => {
           console.log('hacer la llamar');
         }

@@ -65,15 +65,17 @@ const ALBUMS = [
 @Injectable()
 export class AlbunServiceProvider {
 
+  url="https://jsonplaceholder.typicode.com/albums";
+
   constructor(public http: HttpClient) {
-    console.log('Hello AlbunServiceProvider Provider');
+  
   }
 
 
 
   /**retorme  albunes de fotos */
   getAll():any{
-     return ALBUMS;
+     return this.http.get(this.url);
   }
 
 /**retorme  albunes de fotos */
@@ -81,4 +83,9 @@ getAllTops():any{
   return ALBUMS.filter( res => res.top === true);
 }
 
+
+save(data){
+
+ this.http.post(this.url  , data );
+}
 }

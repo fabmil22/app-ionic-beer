@@ -33,6 +33,7 @@ import { PhotoPage } from '../pages/photo/photo';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { Camera } from '@ionic-native/camera';
 import { InvitationProvider } from '../providers/invitation/invitation';
+import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [
     MyApp,
@@ -66,7 +67,8 @@ BrowserModule,
  HttpClientModule,
  NgCalendarModule,
 IonicModule.forRoot(MyApp),
-FormsModule
+FormsModule,
+IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -101,7 +103,8 @@ FormsModule
     UsersProvider,
     PhotosProvider,
     Camera,
-    InvitationProvider
+    InvitationProvider,
+    Storage
   ]
 })
 export class AppModule {}
