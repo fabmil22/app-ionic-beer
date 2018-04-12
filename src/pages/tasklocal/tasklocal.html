@@ -14,5 +14,41 @@
 
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-90>
+        <button ion-button icon-left  (click)="saveTask()">
+          <ion-icon name="add"></ion-icon><span>agregar tarea</span>
+
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list >
+    <ion-item *ngFor="let item of task " >
+
+      <ion-grid>
+        <ion-row>
+
+          <ion-col width-80  >
+              {{ item.title}}
+          </ion-col>
+          <ion-col width-10>
+            <button ion-button icon-only  (click)="update(item)">
+              <ion-icon name="close"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col width-10>
+              <button ion-button icon-only >
+                  <ion-icon name="brush"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-item>
+  </ion-list>
+
+
 
 </ion-content>

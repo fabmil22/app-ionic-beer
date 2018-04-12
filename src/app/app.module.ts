@@ -35,6 +35,9 @@ import { Camera } from '@ionic-native/camera';
 import { InvitationProvider } from '../providers/invitation/invitation';
 import { IonicStorageModule } from '@ionic/storage';
 import { ServiceProvider } from '../providers/service/service';
+import { LocalstorageProvider } from '../providers/localstorage/localstorage';
+import { TasklocalPage } from '../pages/tasklocal/tasklocal';
+import { FavoriteProvider } from '../providers/favorite/favorite';
 @NgModule({
   declarations: [
     MyApp,
@@ -57,11 +60,12 @@ import { ServiceProvider } from '../providers/service/service';
     UserListComponent,
     PhotoPage,
     CalendarPage,
-    EventsPage
-    
+    EventsPage,
+    TasklocalPage
+
   ],
   imports: [
-  
+
 
 BrowserModule,
  FormsModule,
@@ -92,8 +96,9 @@ IonicStorageModule.forRoot()
     ListaUserPage,
     PhotoPage,
     CalendarPage,
-    EventsPage
-    
+    EventsPage,
+    TasklocalPage
+
 
   ],
   providers: [
@@ -105,8 +110,10 @@ IonicStorageModule.forRoot()
     PhotosProvider,
     Camera,
     InvitationProvider,
-    Storage,
-    ServiceProvider
+
+    ServiceProvider,
+    LocalstorageProvider,
+    FavoriteProvider
   ]
 })
 export class AppModule {}

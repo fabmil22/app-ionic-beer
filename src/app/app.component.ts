@@ -1,3 +1,4 @@
+import { TasklocalPage } from './../pages/tasklocal/tasklocal';
 import { EventsPage } from './../pages/events/events';
 import { CalendarPage } from './../pages/calendar/calendar';
 import { ListaUserPage } from './../pages/lista-user/lista-user';
@@ -17,12 +18,13 @@ import { HomePage } from './../pages/home/home';
 import { TopPageModule } from '../pages/top/top.module';
 import { GridPage } from './../pages/grid/grid';
 import { TopPage } from './../pages/top/top';
+import { TasklocalPageModule } from '../pages/tasklocal/tasklocal.module';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any =  TutorialPage;
+  rootPage:any =  TasklocalPage;
 
   pages=[
 
@@ -56,9 +58,12 @@ export class MyApp {
        {titulo: "Calendar",
        component:CalendarPage,
        icon:'time' }
-
+       ,
+       {titulo: "Task",
+       component:TasklocalPage,
+       icon:'time' }
   ]
-  
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
